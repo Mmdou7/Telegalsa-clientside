@@ -2,7 +2,7 @@
     .sidebar{
         display: none;
     }
-    
+
 }
 
 @media screen and (max-width:600px) {
@@ -11,7 +11,20 @@
         left: 50%;
         top: 100%;
         transform: translate(-50%, -50%);
-        
+
     }
-    
+
 }
+
+.color-sidebar{
+  height: 95vh;
+    overflow: auto;
+  background: #ECF5FB;
+
+}
+
+
+.background-color {
+  max-height: 100vh;
+}
+
