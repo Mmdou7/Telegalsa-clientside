@@ -1,0 +1,52 @@
+<form  [formGroup]="SignUpForm"  (ngSubmit)="Submit()">
+  <div class="btn-group mb-5" role="group" aria-label="Basic radio toggle button group">
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+      <label class="btn btn-outline-primary " for="btnradio1">Sign Up</label>
+
+      <input type="radio" class="btn-check  " name="btnradio" id="btnradio2" autocomplete="off">
+      <label class="btn btn-outline-primary " for="btnradio2">Log In</label>
+  </div>
+  <div class="row">
+
+      <div class="mb-3 me-4 col-lg-5">
+          <label for="fname" class="form-label">First Name:</label>
+          <input formControlName="FisrtName" type="text" class="form-control" id="fname"
+              placeholder="enter your first name">
+              <span *ngIf="fisrtName?.invalid&&fisrtName?.touched&&fisrtName?.dirty" style="color:red ;">
+                *Required</span> <br>
+                <span *ngIf="fisrtName?.invalid&&fisrtName?.touched&&fisrtName?.dirty &&fisrtName?.['errors']invalidName" style="color:red ;">
+                    *must not include numbers</span>
+      </div>
+      <div class="mb-5 col-lg-5">
+          <label for="lname" class="form-label">last Name:</label>
+          <input formControlName="LastName" type="text" class="form-control" id="lname"
+              placeholder="enter your last name">
+              <span *ngIf="lastName?.invalid&&lastName?.touched&&lastName?.dirty" style="color:red ;">
+                *Required</span> <br>
+                <span *ngIf="lastName?.invalid&&lastName?.touched&&lastName?.dirty &&lastName?.['errors']invalidName" style="color:red ;">
+                    *must not include numbers</span>
+      </div>
+  </div>
+
+  <div class="mb-5 col-11">
+      <label for="EmailAddress" class="form-label">Email address:</label>
+      <input formControlName="Email" type="email" class="form-control" id="EmailAddress"
+          placeholder="name@example.com">
+          <span *ngIf="Email?.invalid&&Email?.touched&&Email?.dirty" style="color:red ;">
+            *Required</span>
+            
+  </div>
+
+  <div class="mb-5 col-11">
+      <label for="password" class="form-label">Password:</label>
+      <input formControlName="Password" type="password" class="form-control" id="password"
+          placeholder="enter password">
+  </div>
+
+  <div class="mb-5 col-11">
+      <label for="CPassword" class="form-label">Confirm Password:</label>
+      <input formControlName="Password" type="password" class="form-control" id="CPassword"
+          placeholder="Confirm Password">
+  </div>
+  <button class="btn btn-primary" [disabled]="this.SignUpForm.invalid"> Next </button>
+</form>
