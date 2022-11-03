@@ -16,9 +16,19 @@
 
 }
 
+@media not screen and  (max-width:600px) {
+  .scroll{
+    overflow: hidden;
+
+  }
+
+}
+
+
+
+
 .color-sidebar{
   height: 95vh;
-    overflow: auto;
   background: #ECF5FB;
 
 }
