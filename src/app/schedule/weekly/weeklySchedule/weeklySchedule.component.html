@@ -1,0 +1,40 @@
+<form [formGroup]="weeklyForm" (ngSubmit)= "Done()">
+  <div class="row">
+
+    <div class="mb-5 col-lg-5">
+      <label for="className" class="form-label">Class name :</label>
+      <input formControlName="className" type="text" class="form-control" id="className"
+        placeholder="enter your class name">
+    </div>
+    <div class=" col-lg-5">
+      <label for="classCode" class="form-label">Class Code :</label>
+      <input formControlName="classCode" type="number" class="form-control" id="classCode"
+        placeholder="enter your class code">
+    </div>
+  </div>
+
+  <p>
+    Set Class Time
+  </p>
+
+  <div class="row">
+  
+    <div class="col-lg-4">
+      <label for="Day" class="form-label">Day :</label>
+      <input formControlName="day" type="date" class="form-control" id="Day">
+    </div>
+    <div class="col-lg-4">
+      <label for="start" class="form-label">Class start at :</label>
+      <input formControlName="classStart" type="time" class="form-control" id="start">
+    </div>
+    <div class="col-lg-4">
+      <label for="end" class="form-label">Class end at :</label>
+      <input formControlName="classEnd" type="time" class="form-control" id="end">
+    </div>
+  </div>
+
+  <button type="button" class="btn btn-outline-primary me-5 mt-5" (click)="Back()"> Back </button>
+
+  <button class="btn btn-outline-primary mt-5"> Done </button>
+
+</form>

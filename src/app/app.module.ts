@@ -10,6 +10,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CalendarCModule } from './calendar-c/calendar-c.module';
 
+import { AccountTypeModule } from './account-type/account-type.module';
+import { ScheduleModule } from './schedule/schedule.module';
 
 
 
@@ -28,8 +30,9 @@ import { CalendarCModule } from './calendar-c/calendar-c.module';
     LoginpageModule,
     CoreModule,
     SignUpModule,
-    CalendarCModule
-
+    CalendarCModule,
+    AccountTypeModule,
+    ScheduleModule,
 
   ],
   providers: [],

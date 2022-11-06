@@ -19,4 +19,11 @@ export class AccountTypeComponent implements OnInit {
     this.router.navigateByUrl('/signup/accountType/client');
 
   }
+  Back(){
+    this.router.navigateByUrl('/signup')
+  }
+  Next(){
+    this.router.navigateByUrl('/signup/accountType/schedule')
+
+  }
 }

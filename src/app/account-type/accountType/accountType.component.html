@@ -1,8 +1,19 @@
-<p> Select Account type</p>
-<button  type="button" class="btn btn-outline-dark btn-lg specialistPosition" (click)="specialist()"> Specialist </button>
-<button type="button" class="btn btn-outline-dark btn-lg clientPosition" (click)="client()" > Client </button>
+<p> 
+    Select Account type
+
+</p>
+
+<div class="mb-5">
+    <button type="button" class="btn btn-outline-primary btn-lg specialistPosition" (click)="specialist()"> Specialist
+    </button>
+    <button type="button" class="btn btn-outline-primary btn-lg clientPosition" (click)="client()"> Client </button>
+</div>
 
 <router-outlet>
-    
+
 </router-outlet>
 
+<!-- <div class="mt-5">
+    <button class="btn btn-outline-primary accountTypeBack" (click)="Back()"> Back </button>
+    <button class="btn btn-outline-primary accountTypeNext" (click)="Next()"> next </button>
+</div> -->
