@@ -1,10 +1,11 @@
 <form  [formGroup]="SignUpForm"  (ngSubmit)="Submit()">
   <div class="btn-group mb-5" role="group" aria-label="Basic radio toggle button group">
-      <input (click)="redirectSignUp()" type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
       <label class="btn btn-outline-primary " for="btnradio1">Sign Up</label>
 
-      <input  (click)="redirectLogin()" type="radio" class="btn-check  " name="btnradio" id="btnradio2" autocomplete="off">
+      <input (click)="goToLogin()" type="radio" class="btn-check  " name="btnradio" id="btnradio2" autocomplete="off">
       <label class="btn btn-outline-primary " for="btnradio2">Log In</label>
+
   </div>
   <div class="row">
 
@@ -48,5 +49,5 @@
       <input formControlName="Password" type="password" class="form-control" id="CPassword"
           placeholder="Confirm Password">
   </div>
-  <button class="btn btn-primary" [disabled]="this.SignUpForm.invalid"> Next </button>
+  <button class="btn btn-primary" [disabled]="this.SignUpForm.invalid" (click)="Next()" > Next </button>
 </form>
