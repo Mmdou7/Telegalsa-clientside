@@ -8,7 +8,8 @@ import { SignUpModule } from './sign-up/sign-up.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-import { AccountTypeModule } from './account-type/account-type.module';
+import { CalendarCModule } from './calendar-c/calendar-c.module';
+
 
 
 
@@ -20,15 +21,16 @@ import { AccountTypeModule } from './account-type/account-type.module';
     ContactUsComponent,
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
     LoginpageModule,
     CoreModule,
     SignUpModule,
-    AccountTypeModule,
-    
+    CalendarCModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

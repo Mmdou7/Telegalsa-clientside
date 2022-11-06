@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="col-md-4">
+    <h3>{{ viewDate | date : 'MMMM'}}</h3>
+  </div>
+  <mwl-calendar-month-view-header [days]=[days]></mwl-calendar-month-view-header>
+  <mwl-calendar-month-view [viewDate]="viewDate" [events]="events" (eventClicked)="print($event)">
+  </mwl-calendar-month-view>
+  <!-- <mwl-calendar-week-view [viewDate]="viewDate"></mwl-calendar-week-view> -->
+
+  <button (click)="addEvent()">add new Event</button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Appointment title </th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Turtle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let event of events">
+        <th><input type="text" class="form-control" [(ngModel)]="event.title" (keyup)="refresh.next()"></th>
+        <td>
+          <p-calendar [(ngModel)]="viewDate"></p-calendar>
+        </td>
+        <td>da Vinci</td>
+        <td>Leo</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+
+
+</div>
