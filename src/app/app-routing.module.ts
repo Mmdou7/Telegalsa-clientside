@@ -6,6 +6,10 @@ import { ClientComponent } from './account-type/client/client.component';
 import { SpecialistComponent } from './account-type/specialist/specialist.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { LoginComponent } from './loginpage/login/login.component';
+import { DailyScheduleComponent } from './schedule/daily/dailySchedule/dailySchedule.component';
+import { RandomlyScheduleComponent } from './schedule/Randomly/randomlySchedule/randomlySchedule.component';
+import { ScheduleComponent } from './schedule/schedule/schedule/schedule.component';
+import { WeeklyScheduleComponent } from './schedule/weekly/weeklySchedule/weeklySchedule.component';
 import { SignupPageComponent } from './sign-up/signupPage/signupPage.component';
 
 const routes: Routes = [
@@ -28,6 +32,15 @@ const routes: Routes = [
     children:[
       {path: 'specialist', component: SpecialistComponent},
       {path: 'client' , component: ClientComponent }
+    ]
+  },
+  {
+    path: 'signup/accountType/schedule',
+    component: ScheduleComponent,
+    children:[
+      { path: 'randomly' , component: RandomlyScheduleComponent },
+      { path : 'weekly' , component : WeeklyScheduleComponent },
+      { path: 'daily' , component : DailyScheduleComponent }
     ]
   },
   {

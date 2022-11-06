@@ -1,3 +1,40 @@
-<h1 >
-  specialist works!
-</h1>
+<form [formGroup]="specialistForm" (ngSubmit)="Submit()">
+
+  <p> Personal data </p>
+  <div class="mb-5">
+    <label class="me-5">
+      <input type="radio" value="Male" formControlName="personalData">
+      <span>Male</span>
+    </label>
+    <label>
+      <input type="radio" value="Female" formControlName="personalData">
+      <span>Female</span>
+    </label>
+  </div>
+  <div class="row mb-3">
+    <div class="col-5">
+      <label for="date" class="form-label">Date of Birth :</label>
+      <input formControlName="birthDate" type="date" class="form-control" id="date"
+        placeholder="DD/MM/YYYY">
+    </div>
+    <div class="col-5">
+      <label for="number" class="form-label">Mobile Number :</label>
+      <input formControlName="mobileNumber" type="number" class="form-control" id="number"
+        placeholder="Ex: +02 010000000">
+    </div>
+  </div>
+  <div class=" col-5 mb-3">
+    <label for="title" class="form-label">Job Title :</label>
+    <input formControlName="jobTitle" type="text" class="form-control" id="title"
+      placeholder="Ex: Teacher">
+  </div>
+  <div class=" col-3">
+    <label for="address" class="form-label">Job Address :</label>
+    <input formControlName="jobAddress" type="text" class="form-control" id="address"
+      placeholder="Ex: Alexandria">
+  </div>
+  <div class="mt-5">
+    <button type="button" class="btn btn-outline-primary accountTypeBack" (click)="Back()"> Back </button>
+    <button class="btn btn-outline-primary accountTypeNext" > Done </button>
+</div>
+</form>

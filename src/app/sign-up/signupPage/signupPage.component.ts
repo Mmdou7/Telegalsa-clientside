@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginComponent } from 'src/app/loginpage/login/login.component';
 import { validateName } from './Validators';
 
 
@@ -16,7 +15,7 @@ export class SignupPageComponent implements OnInit {
 
   SignUpForm : FormGroup;
     
-  constructor(private fb: FormBuilder, public routes: Router , public router:Router ) {
+  constructor(private fb: FormBuilder , public router:Router ) {
 
     this.SignUpForm = this.fb.group({
       FisrtName: ['',[Validators.required,Validators.minLength(3),validateName]],
@@ -49,10 +48,13 @@ export class SignupPageComponent implements OnInit {
 
   //########################################## Functionality ##########################################
   Next(){
+    console.log(this.SignUpForm.value)
     this.router.navigateByUrl('/signup/accountType')
   }
   goToLogin(){
     this.router.navigateByUrl('/login');
   }
+
+  
 
 }

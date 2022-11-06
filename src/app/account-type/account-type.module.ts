@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { ClientComponent } from './client/client.component';
 import { SpecialistComponent } from './specialist/specialist.component';
 import { AccountTypeComponent } from './accountType/accountType.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -12,6 +13,7 @@ import { AccountTypeComponent } from './accountType/accountType.component';
   imports: [
     CommonModule,
     RouterModule,
+    ReactiveFormsModule,
   ],
   exports: [AccountTypeComponent,ClientComponent,SpecialistComponent]
 })
