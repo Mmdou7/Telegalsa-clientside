@@ -12,6 +12,7 @@ import { CalendarCModule } from './calendar-c/calendar-c.module';
 import {HttpClientModule} from '@angular/common/http';
 import { AccountTypeModule } from './account-type/account-type.module';
 import { ScheduleModule } from './schedule/schedule.module';
+import { LayoutModule } from './layout/layout.module';
 
 
 
@@ -33,7 +34,8 @@ import { ScheduleModule } from './schedule/schedule.module';
     CalendarCModule,
     AccountTypeModule,
     ScheduleModule,
-    HttpClientModule
+    HttpClientModule,
+    LayoutModule
 
 
   ],

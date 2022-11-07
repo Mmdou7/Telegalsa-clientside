@@ -1,2 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~bootstrap/dist/css/bootstrap.css'
+@import '~bootstrap/dist/css/bootstrap.css';
+
+@media screen and (max-width:600px) {
+  .sidebar {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width:600px) {
+  .center-login {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -50%);
+
+  }
+
+}
+
+@media not screen and (max-width:600px) {
+  .scroll {
+    overflow: hidden;
+
+  }
+
+}
+
+
+
+
+.color-sidebar {
+  height: 95vh;
+  background: #ECF5FB;
+
+}
+
+
+.background-color {
+  max-height: 100vh;
+}

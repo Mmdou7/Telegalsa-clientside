@@ -35,7 +35,7 @@ this.router.navigateByUrl('/signup')
   routeBool:boolean = false
 
   loginProcess(){
-    this.httpServices.loginUser(this.loginPageForm.value).subscribe(data  => {
+    this.httpServices.loginUser(this.loginPageForm.value).subscribe(data => {
         this.router.navigateByUrl('/calendar');
 
 

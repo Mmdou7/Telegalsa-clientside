@@ -6,12 +6,12 @@ import { ClientComponent } from './account-type/client/client.component';
 import { SpecialistComponent } from './account-type/specialist/specialist.component';
 import { CalendarComponent } from './calendar-c/calendar/calendar.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-import { LoginComponent } from './loginpage/login/login.component';
+import { SigninLayoutComponent } from './layout/signin-layout/signin-layout.component';
+import { SignupLayoutComponent } from './layout/signup-layout/signup-layout.component';
 import { DailyScheduleComponent } from './schedule/daily/dailySchedule/dailySchedule.component';
 import { RandomlyScheduleComponent } from './schedule/Randomly/randomlySchedule/randomlySchedule.component';
 import { ScheduleComponent } from './schedule/schedule/schedule/schedule.component';
 import { WeeklyScheduleComponent } from './schedule/weekly/weeklySchedule/weeklySchedule.component';
-import { SignupPageComponent } from './sign-up/signupPage/signupPage.component';
 
 const routes: Routes = [
   {
@@ -21,11 +21,11 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: SigninLayoutComponent
   },
   {
     path: 'signup',
-    component: SignupPageComponent
+    component: SignupLayoutComponent
   },
   {
     path: 'signup/accountType',
@@ -62,7 +62,7 @@ const routes: Routes = [
 ]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-exports: [RouterModule]
+  exports: [RouterModule]
 })
 
 export class AppRoutingModule { }
