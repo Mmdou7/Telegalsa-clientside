@@ -34,7 +34,9 @@ const routes: Routes = [
     children:[
       {path: 'specialist', component: SpecialistComponent},
       {path: 'client' , component: ClientComponent }
-    ]
+    ],
+    canActivate: [AuthGuard]
+
   },
   {
     path: 'signup/accountType/schedule',
@@ -43,12 +45,13 @@ const routes: Routes = [
       { path: 'randomly' , component: RandomlyScheduleComponent },
       { path : 'weekly' , component : WeeklyScheduleComponent },
       { path: 'daily' , component : DailyScheduleComponent }
-    ]
+    ],
+    canActivate: [AuthGuard]
+
   },
   {
     path: 'about',
-    component: AboutUsComponent,
-    canActivate: [AuthGuard]
+    component: AboutUsComponent
   },
 
   {
@@ -57,7 +60,9 @@ const routes: Routes = [
   },
   {
     path: 'calendar',
-    component: CalendarComponent
+    component: CalendarComponent,
+    canActivate: [AuthGuard]
+
   },
 
 
