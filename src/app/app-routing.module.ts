@@ -4,6 +4,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { AccountTypeComponent } from './account-type/accountType/accountType.component';
 import { ClientComponent } from './account-type/client/client.component';
 import { SpecialistComponent } from './account-type/specialist/specialist.component';
+import { AuthGuard } from './auth.guard';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { LoginComponent } from './loginpage/login/login.component';
 import { DailyScheduleComponent } from './schedule/daily/dailySchedule/dailySchedule.component';
@@ -45,7 +46,8 @@ const routes: Routes = [
   },
   {
     path: 'about',
-    component: AboutUsComponent
+    component: AboutUsComponent,
+    canActivate: [AuthGuard]
   },
 
   {
