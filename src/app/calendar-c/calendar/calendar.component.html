@@ -7,24 +7,28 @@
   </mwl-calendar-month-view>
   <!-- <mwl-calendar-week-view [viewDate]="viewDate"></mwl-calendar-week-view> -->
 
-  <button (click)="addEvent()">add new Event</button>
+  <button class="btn btn-warning" (click)="addEvent()">add new Event</button>
+
   <table class="table">
     <thead>
       <tr>
         <th scope="col">Appointment title </th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Turtle</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+        <th scope="col">Operation</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let event of events">
         <th><input type="text" class="form-control" [(ngModel)]="event.title" (keyup)="refresh.next()"></th>
         <td>
-          <p-calendar [(ngModel)]="viewDate"></p-calendar>
+          <p-calendar [(ngModel)]="event.start" (ngModelChange)="refresh.next()"></p-calendar>
         </td>
-        <td>da Vinci</td>
-        <td>Leo</td>
+        <td>
+          <p-calendar [(ngModel)]="event.end" (ngModelChange)="refresh.next()"></p-calendar>
+        </td>
+        <td><button class="btn btn-danger" (click)="deleteEvent(event)">Delete</button></td>
+        <td><button class="btn btn-warning" (click)=" EditEvent(event)">Edit</button></td>
       </tr>
 
     </tbody>

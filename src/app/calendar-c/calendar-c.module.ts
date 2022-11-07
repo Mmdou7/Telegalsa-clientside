@@ -4,9 +4,9 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { AccountTypeModule } from '../account-type/account-type.module';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import {CalendarModule as CalenderNg} from 'primeng/calendar';
-
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -20,7 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     CalendarModule,
-    CalenderNg
+    CalenderNg,
+    BrowserAnimationsModule
 
 
   ],

@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CalendarCModule } from './calendar-c/calendar-c.module';
-
+import {HttpClientModule} from '@angular/common/http';
 import { AccountTypeModule } from './account-type/account-type.module';
 import { ScheduleModule } from './schedule/schedule.module';
 
@@ -33,6 +33,8 @@ import { ScheduleModule } from './schedule/schedule.module';
     CalendarCModule,
     AccountTypeModule,
     ScheduleModule,
+    HttpClientModule
+
 
   ],
   providers: [],

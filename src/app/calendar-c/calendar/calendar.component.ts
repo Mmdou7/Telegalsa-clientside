@@ -56,7 +56,7 @@ export class CalendarComponent implements OnInit {
   events: CalendarEvent[]= [
     {
       start: subDays(startOfDay(new Date()), 0),
-      end: addDays(new Date(), 2),
+      end: addDays(new Date(), 1),
       title: 'A 3 day event',
       color: { ...colors.red },
       allDay: true,
@@ -89,12 +89,37 @@ export class CalendarComponent implements OnInit {
     ];
   }
 
+  EditEvent(eventToEdit:CalendarEvent){
+    this.events = this.events.filter((event) => event !== eventToEdit);
+        this.events = [
+      ...this.events,
+      {
+        title: eventToEdit.title,
+        start: eventToEdit.start,
+        end: eventToEdit.end,
+        color: colors.red,
+        draggable: true,
+        resizable: {
+          beforeStart: true,
+          afterEnd: true,
+        },
+      },
+    ];
+
+
+  }
+
 
 
 
   constructor() { }
 
   ngOnInit(): void {
+
+  }
+
+   deleteEvent(eventToDelete: CalendarEvent) {
+    this.events = this.events.filter((event) => event !== eventToDelete);
   }
 
 }
