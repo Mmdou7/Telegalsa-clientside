@@ -4,11 +4,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { AccountTypeComponent } from './account-type/accountType/accountType.component';
 import { ClientComponent } from './account-type/client/client.component';
 import { SpecialistComponent } from './account-type/specialist/specialist.component';
-<<<<<<< HEAD
 import { AuthGuard } from './auth.guard';
-=======
 import { CalendarComponent } from './calendar-c/calendar/calendar.component';
->>>>>>> 77e37e26116deaadc47b715703481c8345b1d92b
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { LoginComponent } from './loginpage/login/login.component';
 import { DailyScheduleComponent } from './schedule/daily/dailySchedule/dailySchedule.component';
