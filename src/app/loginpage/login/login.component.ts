@@ -36,7 +36,10 @@ this.router.navigateByUrl('/signup')
 
   loginProcess(){
     this.httpServices.loginUser(this.loginPageForm.value).subscribe(data => {
-        this.router.navigateByUrl('/calendar');
+      localStorage.setItem('token',data.token);
+      localStorage.setItem('id',data.user.id);
+      this.router.navigateByUrl('/calendar');
+
 
 
     },err =>{

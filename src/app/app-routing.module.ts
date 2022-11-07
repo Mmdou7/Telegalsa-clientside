@@ -7,6 +7,7 @@ import { SpecialistComponent } from './account-type/specialist/specialist.compon
 import { AuthGuard } from './auth.guard';
 import { CalendarComponent } from './calendar-c/calendar/calendar.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { CalendarLayoutComponent } from './layout/calendar-layout/calendar-layout.component';
 import { SigninLayoutComponent } from './layout/signin-layout/signin-layout.component';
 import { SignupLayoutComponent } from './layout/signup-layout/signup-layout.component';
 import { DailyScheduleComponent } from './schedule/daily/dailySchedule/dailySchedule.component';
@@ -46,7 +47,7 @@ const routes: Routes = [
       { path : 'weekly' , component : WeeklyScheduleComponent },
       { path: 'daily' , component : DailyScheduleComponent }
     ],
-    canActivate: [AuthGuard]
+    // canActivate: [AuthGuard]
 
   },
   {
@@ -60,7 +61,7 @@ const routes: Routes = [
   },
   {
     path: 'calendar',
-    component: CalendarComponent,
+    component: CalendarLayoutComponent,
     canActivate: [AuthGuard]
 
   },

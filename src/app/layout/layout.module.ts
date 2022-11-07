@@ -5,6 +5,8 @@ import { SigninLayoutComponent } from './signin-layout/signin-layout.component';
 import { CoreModule } from '../core/core.module';
 import { LoginpageModule } from './../loginpage/loginpage.module';
 import { SignUpModule } from './../sign-up/sign-up.module';
+import { CalendarLayoutComponent } from './calendar-layout/calendar-layout.component';
+import { CalendarCModule } from '../calendar-c/calendar-c.module';
 
 
 
@@ -14,13 +16,15 @@ import { SignUpModule } from './../sign-up/sign-up.module';
   declarations: [
     SignupLayoutComponent,
     SigninLayoutComponent,
+    CalendarLayoutComponent,
 
   ],
   imports: [
 CommonModule,
   CoreModule,
   LoginpageModule,
-  SignUpModule
+  SignUpModule,
+  CalendarCModule
 
   ],
   exports: [SigninLayoutComponent,SignupLayoutComponent]
