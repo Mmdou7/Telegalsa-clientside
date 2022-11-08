@@ -3,7 +3,7 @@
     <h3>{{ viewDate | date : 'MMMM'}}</h3>
   </div>
   <mwl-calendar-month-view-header [days]=[days]></mwl-calendar-month-view-header>
-  <mwl-calendar-month-view [viewDate]="viewDate" [events]="events" (eventClicked)="print($event)">
+  <mwl-calendar-month-view [refresh]="refresh" [viewDate]="viewDate" [events]="events" (eventClicked)="print($event)">
   </mwl-calendar-month-view>
   <!-- <mwl-calendar-week-view [viewDate]="viewDate"></mwl-calendar-week-view> -->
 

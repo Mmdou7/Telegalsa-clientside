@@ -13,8 +13,15 @@ export class HttpService {
   constructor(private httpClient : HttpClient  ) { }
 
   loginUser(loginDto:any): Observable<any>{
-    let test  = this.httpClient.post(this.uri+"api/User/Login", loginDto);
-    console.log(test);
-    return test ;
+    return this.httpClient.post(this.uri+"api/User/Login", loginDto);
+ ;
+  }
+
+  createSchedule(scheduleDto:any){
+    return this.httpClient.post(this.uri+"api/Schedule", scheduleDto);
+  }
+
+  getSchedule(){
+    return this.httpClient.get(this.uri+"api/Schedule");
   }
 }

@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CalendarEvent, CalendarEventAction } from 'angular-calendar/modules/calendar.module';
 import { WeekDay } from 'calendar-utils';
 import { addDays, endOfDay, startOfDay, subDays } from 'date-fns';
-import { Subject } from 'rxjs';
+import { scheduled, Subject } from 'rxjs';
+import { HttpService } from 'src/app/http.service';
 
 
 
@@ -21,6 +22,8 @@ const colors: any = {
 export class CalendarComponent implements OnInit {
 
   viewDate : Date = new Date();
+  constructor(public httpServices:HttpService) {  }
+
 
   days : WeekDay = {
     date: new Date(),
@@ -30,6 +33,8 @@ export class CalendarComponent implements OnInit {
     isFuture: false,
     isWeekend: false
   }
+
+
 
   actions: CalendarEventAction[] = [
     {
@@ -51,28 +56,79 @@ export class CalendarComponent implements OnInit {
     console.log(event);
   }
 
+  events : Array<CalendarEvent> = [
+    // {
+    //   start: subDays(startOfDay(new Date()), 0),
+    //   end: addDays(new Date(), 1),
+    //   title: 'A 3 day event',
+    //   color: { ...colors.red },
+    //   allDay: true,
+    //   actions : this.actions,
+    //   resizable: {
+    //     beforeStart: false,
+    //     afterEnd: false,
+    //   },
+    //   draggable: false,
 
-
-  events: CalendarEvent[]= [
-    {
-      start: subDays(startOfDay(new Date()), 0),
-      end: addDays(new Date(), 1),
-      title: 'A 3 day event',
-      color: { ...colors.red },
-      allDay: true,
-      actions : this.actions,
-      resizable: {
-        beforeStart: false,
-        afterEnd: false,
-      },
-      draggable: false,
-
-
-    }
-
+    // }
   ]
+
+  response: any;
+
+  getEvents(){
+    this.httpServices.getSchedule ().subscribe(data =>{
+      this.response = data;
+      for(let schedule of this.response){
+
+        this.events.push(
+          {
+          start: new Date(schedule.startDate),
+          title: schedule.sessionTitle,
+          color: { ...colors.red },
+          allDay: false,
+          actions : this.actions,
+          resizable: {
+            beforeStart: false,
+            afterEnd: false,
+          },
+          draggable: false,
+        }
+      )
+      this.refresh.next();
+      }
+    }, erro =>{
+      console.log(erro);
+    });
+
+  }
+
+
+
+
+  // events: CalendarEvent[]= [
+  //   {
+  //     start: subDays(startOfDay(new Date()), 0),
+  //     end: addDays(new Date(), 1),
+  //     title: 'A 3 day event',
+  //     color: { ...colors.red },
+  //     allDay: true,
+  //     actions : this.actions,
+  //     resizable: {
+  //       beforeStart: false,
+  //       afterEnd: false,
+  //     },
+  //     draggable: false,
+
+
+  //   }
+
+  // ]
+
+
+
   refresh = new Subject<void>();
   addEvent(): void {
+
     this.events = [
       ...this.events,
       {
@@ -112,9 +168,9 @@ export class CalendarComponent implements OnInit {
 
 
 
-  constructor() { }
 
   ngOnInit(): void {
+    this.getEvents();
 
   }
 
