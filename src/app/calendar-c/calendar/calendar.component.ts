@@ -4,6 +4,7 @@ import { WeekDay } from 'calendar-utils';
 import { addDays, endOfDay, startOfDay, subDays } from 'date-fns';
 import { scheduled, Subject } from 'rxjs';
 import { HttpService } from 'src/app/http.service';
+import { Schedule } from './../../models/schedule';
 
 
 
@@ -20,6 +21,8 @@ const colors: any = {
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent implements OnInit {
+
+  schedule: Schedule = new Schedule();
 
   viewDate : Date = new Date();
   constructor(public httpServices:HttpService) {  }
@@ -57,20 +60,7 @@ export class CalendarComponent implements OnInit {
   }
 
   events : Array<CalendarEvent> = [
-    // {
-    //   start: subDays(startOfDay(new Date()), 0),
-    //   end: addDays(new Date(), 1),
-    //   title: 'A 3 day event',
-    //   color: { ...colors.red },
-    //   allDay: true,
-    //   actions : this.actions,
-    //   resizable: {
-    //     beforeStart: false,
-    //     afterEnd: false,
-    //   },
-    //   draggable: false,
 
-    // }
   ]
 
   response: any;
@@ -82,6 +72,7 @@ export class CalendarComponent implements OnInit {
 
         this.events.push(
           {
+          id: schedule.id,
           start: new Date(schedule.startDate),
           title: schedule.sessionTitle,
           color: { ...colors.red },
@@ -105,27 +96,6 @@ export class CalendarComponent implements OnInit {
 
 
 
-  // events: CalendarEvent[]= [
-  //   {
-  //     start: subDays(startOfDay(new Date()), 0),
-  //     end: addDays(new Date(), 1),
-  //     title: 'A 3 day event',
-  //     color: { ...colors.red },
-  //     allDay: true,
-  //     actions : this.actions,
-  //     resizable: {
-  //       beforeStart: false,
-  //       afterEnd: false,
-  //     },
-  //     draggable: false,
-
-
-  //   }
-
-  // ]
-
-
-
   refresh = new Subject<void>();
   addEvent(): void {
 
@@ -146,13 +116,18 @@ export class CalendarComponent implements OnInit {
   }
 
   EditEvent(eventToEdit:CalendarEvent){
+
     this.events = this.events.filter((event) => event !== eventToEdit);
+    console.log(eventToEdit);
+    this.httpServices.editSchedule(JSON.stringify(this.schedule),eventToEdit.id?.toString()).subscribe(data =>{
+      this.refresh.next();
+    });
         this.events = [
       ...this.events,
       {
-        title: eventToEdit.title,
-        start: eventToEdit.start,
-        end: eventToEdit.end,
+        title: this.schedule.getSessionTitle(),
+        start: this.schedule.getStartDate(),
+        // end: eventToEdit.end,
         color: colors.red,
         draggable: true,
         resizable: {
@@ -167,8 +142,6 @@ export class CalendarComponent implements OnInit {
 
 
 
-
-
   ngOnInit(): void {
     this.getEvents();
 
@@ -176,6 +149,7 @@ export class CalendarComponent implements OnInit {
 
    deleteEvent(eventToDelete: CalendarEvent) {
     this.events = this.events.filter((event) => event !== eventToDelete);
+    this.httpServices.deleteSchedule(eventToDelete.id?.toString()).subscribe();
   }
 
 }

@@ -14,18 +14,19 @@
       <tr>
         <th scope="col">Appointment title </th>
         <th scope="col">Start Date</th>
-        <th scope="col">End Date</th>
         <th scope="col">Operation</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let event of events">
-        <th><input type="text" class="form-control" [(ngModel)]="event.title" (keyup)="refresh.next()"></th>
+        <th><input type="text" (keyup)="schedule.setSessionTitle(event.title)" class="form-control"
+            [(ngModel)]="event.title" (keyup)="refresh.next()"></th>
         <td>
-          <p-calendar [(ngModel)]="event.start" (ngModelChange)="refresh.next()"></p-calendar>
+          <p-calendar #myCalendar (mwlClick)="schedule.setStartDate(event.start)" [(ngModel)]="event.start"
+            (ngModelChange)="refresh.next()"></p-calendar>
         </td>
         <td>
-          <p-calendar [(ngModel)]="event.end" (ngModelChange)="refresh.next()"></p-calendar>
+          <!-- <p-calendar [(ngModel)]="event.end" (ngModelChange)="refresh.next()"></p-calendar> -->
         </td>
         <td><button class="btn btn-danger" (click)="deleteEvent(event)">Delete</button></td>
         <td><button class="btn btn-warning" (click)=" EditEvent(event)">Edit</button></td>
