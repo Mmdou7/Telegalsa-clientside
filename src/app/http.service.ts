@@ -14,8 +14,8 @@ export class HttpService {
 
   loginUser(loginDto:any): Observable<any>{
     return this.httpClient.post(this.uri+"api/User/Login", loginDto);
- ;
   }
+
 
   createSchedule(scheduleDto:any){
     return this.httpClient.post(this.uri+"api/Schedule", scheduleDto);

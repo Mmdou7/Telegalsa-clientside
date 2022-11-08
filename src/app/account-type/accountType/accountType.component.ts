@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class AccountTypeComponent implements OnInit {
 
   constructor(public router:Router) { }
+  
 
   ngOnInit() {
   }

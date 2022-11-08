@@ -40,8 +40,6 @@ this.router.navigateByUrl('/signup')
       localStorage.setItem('id',data.user.id);
       this.router.navigateByUrl('/calendar');
 
-
-
     },err =>{
       alert("Invalid Email or Password")
     } );
