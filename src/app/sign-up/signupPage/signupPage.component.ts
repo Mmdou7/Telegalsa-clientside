@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { validatePassword } from './passwordValidation';
 import { validateName } from './Validators';
 import { UserService } from './../../services/user.service';
 import { User } from 'src/app/models/user';
@@ -25,13 +26,14 @@ export class SignupPageComponent implements OnInit {
       FisrtName: ['',[Validators.required,Validators.minLength(3),validateName]],
       LastName : ['',[Validators.required,Validators.minLength(3),validateName]],
       Email    : ['',[Validators.required, Validators.email]],
-      Password :  '',
-      CPassword: ''
+      Password : [ '',[Validators.required]],
+      confirmPassword: [ '',[Validators.required]]
     })
    }
 
    Submit(){
     console.log(this.SignUpForm.value)
+    this.router.navigateByUrl('/signup/accountType')
    }
 
 
@@ -49,12 +51,14 @@ export class SignupPageComponent implements OnInit {
   get Email(){
     return this.SignUpForm.get('Email');
   }
+  get password(){
+    return this.SignUpForm.get('Password');
+  }
+  get confirmPassword(){
+    return this.SignUpForm.get('CPassword');
+  }
 
   //########################################## Functionality ##########################################
-  Next(){
-    console.log(this.SignUpForm.value)
-    this.router.navigateByUrl('/signup/accountType')
-  }
   goToLogin(){
     this.router.navigateByUrl('/login');
   }
@@ -65,7 +69,7 @@ export class SignupPageComponent implements OnInit {
     this.user.setLastName(this.SignUpForm.controls['LastName'].value);
     this.user.setEmail(this.SignUpForm.controls['Email'].value);
     this.user.setPassword(this.SignUpForm.controls['Password'].value);
-    this.user.setCPassword(this.SignUpForm.controls['CPassword'].value);
+    this.user.setCPassword(this.SignUpForm.controls['confirmPassword'].value);
 
     this.router.navigateByUrl('/signup/accountType');
 

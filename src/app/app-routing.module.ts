@@ -36,7 +36,11 @@ const routes: Routes = [
       {path: 'specialist', component: SpecialistComponent},
       {path: 'client' , component: ClientComponent }
     ],
+<<<<<<< HEAD
     // canActivate: [AuthGuard]
+=======
+    //canActivate: [AuthGuard]
+>>>>>>> 4213c5580d548416f3e823c67ea7477bdc4bc645
 
   },
   {
@@ -62,7 +66,7 @@ const routes: Routes = [
   {
     path: 'calendar',
     component: CalendarLayoutComponent,
-    canActivate: [AuthGuard]
+    //canActivate: [AuthGuard]
 
   },
 
