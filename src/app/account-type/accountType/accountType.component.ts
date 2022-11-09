@@ -30,8 +30,6 @@ export class AccountTypeComponent implements OnInit {
     user.setSpecialist(this.is_Specialist);
     this.userServices.setUser(user);
     this.router.navigateByUrl('/signup/accountType/client');
-
-
   }
 
 
@@ -43,12 +41,21 @@ export class AccountTypeComponent implements OnInit {
   // client(){
   //   this.router.navigateByUrl('/signup/accountType/client');
 
+<<<<<<< HEAD
   // }
   Back(){
     this.router.navigateByUrl('/signup')
   }
   Next(){
     this.router.navigateByUrl('/signup/accountType/schedule')
-
+=======
   }
+  // Back(){
+  //   this.router.navigateByUrl('/signup')
+  // }
+  // Next(){
+  //   this.router.navigateByUrl('/signup/accountType/schedule')
+>>>>>>> 5c7eadd3a8694c12c133a056fe5fd3a7916cbfe9
+
+  // }
 }

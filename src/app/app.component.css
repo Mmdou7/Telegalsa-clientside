@@ -19,6 +19,7 @@
 @media not screen and  (max-width:600px) {
   .scroll{
     overflow: hidden;
+    overflow-y: hidden
 
   }
 
