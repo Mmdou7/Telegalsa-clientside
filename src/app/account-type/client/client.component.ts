@@ -35,19 +35,19 @@ export class ClientComponent implements OnInit {
     user.setBirthDate(this.clientForm.controls['birthDate'].value)
     // this.clientForm.controls['personalData'].value;
     this.userService.setUser(user);
-    const data = {
-        firstName: "omar",
-        lastName: "omaya",
-        email: "oo1@gmail.com",
-        password: "19891989",
-        cpassword: "19891989",
-        is_Specialist: true,
-        birthDate: "2022-11-09T18:59:20.037Z",
-        jobTitle: "string",
-        gender: "m",
-        address: "janakles"
+    // const data = {
+    //     firstName: "omar",
+    //     lastName: "omaya",
+    //     email: "oo1@gmail.com",
+    //     password: "19891989",
+    //     cpassword: "19891989",
+    //     is_Specialist: true,
+    //     birthDate: "2022-11-09T18:59:20.037Z",
+    //     jobTitle: "string",
+    //     gender: "m",
+    //     address: "janakles"
 
-    }
+    // }
 
       const dateMapping = {
         firstName: user.firstName,
