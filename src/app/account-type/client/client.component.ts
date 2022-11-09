@@ -73,7 +73,6 @@ export class ClientComponent implements OnInit {
       }
 
     });
-    // console.log(user);
   }
 
 

@@ -1,4 +1,4 @@
-<form [formGroup]="specialistForm" (ngSubmit)="Submit()">
+<form [formGroup]="specialistForm" (ngSubmit)="getUserDataSpecialist()">
 
   <p> Personal data </p>
   <div class="mb-5">
@@ -14,8 +14,7 @@
   <div class="row mb-3">
     <div class="col-5">
       <label for="date" class="form-label">Date of Birth :</label>
-      <input formControlName="birthDate" type="date" class="form-control" id="date"
-        placeholder="DD/MM/YYYY">
+      <input formControlName="birthDate" type="date" class="form-control" id="date" placeholder="DD/MM/YYYY">
     </div>
     <div class="col-5">
       <label for="number" class="form-label">Mobile Number :</label>
@@ -25,16 +24,14 @@
   </div>
   <div class=" col-5 mb-3">
     <label for="title" class="form-label">Job Title :</label>
-    <input formControlName="jobTitle" type="text" class="form-control" id="title"
-      placeholder="Ex: Teacher">
+    <input formControlName="jobTitle" type="text" class="form-control" id="title" placeholder="Ex: Teacher">
   </div>
   <div class=" col-3">
     <label for="address" class="form-label">Job Address :</label>
-    <input formControlName="jobAddress" type="text" class="form-control" id="address"
-      placeholder="Ex: Alexandria">
+    <input formControlName="jobAddress" type="text" class="form-control" id="address" placeholder="Ex: Alexandria">
   </div>
   <div class="mt-5">
     <button type="button" class="btn btn-outline-primary accountTypeBack" (click)="Back()"> Back </button>
-    <button class="btn btn-outline-primary accountTypeNext" > Done </button>
-</div>
+    <button class="btn btn-outline-primary accountTypeNext"> Done </button>
+  </div>
 </form>

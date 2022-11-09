@@ -1,14 +1,16 @@
-<p class="d-flex justify-content-md-start fw-bold"> 
-    Select Account type
+<p class="d-flex justify-content-md-start fw-bold">
+  Select Account type
 
 </p>
 
 <div class="mb-5 mt-5">
-    <div class=" d-flex justify-content-md-center">
-    <button value="specialist"  type="button" class=" me-5 col col-md-4 btn btn-outline-primary btn-lg " (click)="specialist()"> Specialist
+  <div class=" d-flex justify-content-md-center">
+    <button value="specialist" type="button" class=" me-5 col col-md-4 btn btn-outline-primary btn-lg "
+      (click)="isSpecialist()"> Specialist
     </button>
-    <button value="client" type="button" class=" col col-md-4  btn btn-outline-primary btn-lg " (click)="client()"> Client </button>
-</div>
+    <button value="client" type="button" class=" col col-md-4  btn btn-outline-primary btn-lg " (click)="isClient()">
+      Client </button>
+  </div>
 </div>
 
 <router-outlet>
