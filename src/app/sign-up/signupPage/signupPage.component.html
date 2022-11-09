@@ -45,8 +45,11 @@
 
   <div class="mb-5 col-11">
     <label for="CPassword" class="form-label">Confirm Password:</label>
-    <input formControlName="Password" type="password" class="form-control" id="CPassword"
-      placeholder="Confirm Password">
+    <input formControlName="confirmPassword" (change)="confirmPaswordOnChange()" type="password" class="form-control"
+      id="CPassword" placeholder="Confirm Password">
+    <span *ngIf="this.SignUpForm.controls['confirmPassword'].hasError('mismatch')" style="color:red ;">
+      Please confirm your password</span>
+
   </div>
   <button class="btn btn-primary" [disabled]="this.SignUpForm.invalid" (click)="getUserData()"> Next </button>
 </form>

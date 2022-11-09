@@ -27,7 +27,7 @@ export class SignupPageComponent implements OnInit {
       LastName : ['',[Validators.required,Validators.minLength(3),validateName]],
       Email    : ['',[Validators.required, Validators.email]],
       Password : [ '',[Validators.required]],
-      confirmPassword: [ '',[Validators.required]]
+      confirmPassword: [ '',[Validators.required,]]
     })
    }
 
@@ -35,6 +35,14 @@ export class SignupPageComponent implements OnInit {
     console.log(this.SignUpForm.value)
     this.router.navigateByUrl('/signup/accountType')
    }
+
+   confirmPaswordOnChange() {
+  if (this.SignUpForm.controls['Password'].value == this.SignUpForm.controls['confirmPassword'].value) {
+    this.SignUpForm.controls['confirmPassword'].setErrors(null);
+  } else {
+    this.SignUpForm.controls['confirmPassword'].setErrors({mismatch:true});
+  }
+}
 
 
 
@@ -70,7 +78,6 @@ export class SignupPageComponent implements OnInit {
     this.user.setEmail(this.SignUpForm.controls['Email'].value);
     this.user.setPassword(this.SignUpForm.controls['Password'].value);
     this.user.setCPassword(this.SignUpForm.controls['confirmPassword'].value);
-
     this.router.navigateByUrl('/signup/accountType');
 
 
