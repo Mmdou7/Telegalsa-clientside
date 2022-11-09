@@ -30,8 +30,6 @@ export class AccountTypeComponent implements OnInit {
     this.userServices.setUser(user);
     console.log(user);
     this.router.navigateByUrl('/signup/accountType/client');
-
-
   }
 
 
@@ -44,11 +42,11 @@ export class AccountTypeComponent implements OnInit {
     this.router.navigateByUrl('/signup/accountType/client');
 
   }
-  Back(){
-    this.router.navigateByUrl('/signup')
-  }
-  Next(){
-    this.router.navigateByUrl('/signup/accountType/schedule')
+  // Back(){
+  //   this.router.navigateByUrl('/signup')
+  // }
+  // Next(){
+  //   this.router.navigateByUrl('/signup/accountType/schedule')
 
-  }
+  // }
 }
