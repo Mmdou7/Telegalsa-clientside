@@ -3,7 +3,7 @@ import { CalendarEvent, CalendarEventAction } from 'angular-calendar/modules/cal
 import { WeekDay } from 'calendar-utils';
 import { addDays, endOfDay, startOfDay, subDays } from 'date-fns';
 import { scheduled, Subject } from 'rxjs';
-import { HttpService } from 'src/app/http.service';
+import { HttpService } from 'src/app/services/http.service';
 import { Schedule } from './../../models/schedule';
 
 

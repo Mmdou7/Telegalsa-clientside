@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
-import { HttpService } from 'src/app/http.service';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'loginPage',

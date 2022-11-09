@@ -36,7 +36,7 @@ const routes: Routes = [
       {path: 'specialist', component: SpecialistComponent},
       {path: 'client' , component: ClientComponent }
     ],
-    canActivate: [AuthGuard]
+    // canActivate: [AuthGuard]
 
   },
   {
