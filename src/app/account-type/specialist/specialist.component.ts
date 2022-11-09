@@ -26,7 +26,7 @@ export class SpecialistComponent implements OnInit {
   ngOnInit() {
   }
 
-    getUserDataClient(){
+    getUserDataSpecialist(){
     let user:User = this.userService.getUser();
     if(this.specialistForm.controls['personalData'].value=="Male"){
       user.setGender("M");
