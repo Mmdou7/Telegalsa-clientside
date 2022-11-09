@@ -26,7 +26,7 @@ export class SignupPageComponent implements OnInit {
       FisrtName: ['',[Validators.required,Validators.minLength(3),validateName]],
       LastName : ['',[Validators.required,Validators.minLength(3),validateName]],
       Email    : ['',[Validators.required, Validators.email]],
-      Password : [ '',[Validators.required]],
+      Password : [ '',[Validators.required,Validators.minLength(6)]],
       confirmPassword: [ '',[Validators.required,]]
     })
    }

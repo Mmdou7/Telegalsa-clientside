@@ -23,7 +23,7 @@ export class ClientComponent implements OnInit {
   }
   Submit() { 
     console.log(this.clientForm.value)
-    this.router.navigateByUrl('signup/accountType/schedule')
+    this.router.navigateByUrl('calendar')
   }
   Back(){
     this.router.navigateByUrl('signup/accountType')

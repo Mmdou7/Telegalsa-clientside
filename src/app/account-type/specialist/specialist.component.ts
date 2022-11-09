@@ -25,7 +25,7 @@ export class SpecialistComponent implements OnInit {
  
   Submit(){
     console.log(this.specialistForm.value)
-    this.router.navigateByUrl('signup/accountType/schedule')
+    this.router.navigateByUrl('calendar')
   }
   Back(){
     this.router.navigateByUrl('signup/accountType')
