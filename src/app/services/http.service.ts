@@ -12,11 +12,16 @@ export class HttpService {
   constructor(private httpClient : HttpClient  ) { }
 
   public httpOptions = {
-  headers: new HttpHeaders({'Content-Type': 'application/json'})
+  headers: new HttpHeaders({'Content-Type': 'application/json',
+"accept": "accept: */*"})
 }
 
   loginUser(loginDto:any): Observable<any>{
-    return this.httpClient.post(this.uri+"api/User/Login", loginDto);
+    return this.httpClient.post(this.uri+"api/auth/Login", loginDto);
+  }
+
+    registerUser(registerDto:any): Observable<any>{
+    return this.httpClient.post(this.uri+"api/auth/register", registerDto,this.httpOptions);
   }
 
 

@@ -1,16 +1,29 @@
 export class User{
 
 
-  firstName!: string;
-  lastName!: string;
-  email!: string;
-  password!: string;
-  cpassword!:string;
-  is_Specialist!:boolean;
-  birthDate!:Date;
-  jobTitle!:string;
-  gender!:string;
-  address!:string;
+  firstName: string|null;
+  lastName: string|null;
+  email: string|null;
+  password: string|null;
+  cpassword:string|null;
+  is_Specialist!:boolean|null;
+  birthDate:Date|null;
+  jobTitle:string|null;
+  gender:string|null;
+  address:string|null;
+
+  constructor(){
+    this.firstName =null;
+    this.lastName = null,
+    this.email =null;
+    this.password = null;
+    this.cpassword = null;
+    this.birthDate = null;
+    this.jobTitle = null;
+    this.gender = null;
+    this.address = "Client";
+    this.is_Specialist = null;
+  }
 
   public setFirstName(firstName:string){
     this.firstName=firstName;
@@ -36,8 +49,8 @@ export class User{
     this.is_Specialist = is_Specialist;
   }
 
-  public setBirthDate(birithDate:Date){
-    this.birthDate = birithDate;
+  public setBirthDate(birithDate:string){
+    this.birthDate = new Date(birithDate);
   }
 
   public setJobTitle(jobTitle:string){
