@@ -7,6 +7,7 @@ import { SpecialistComponent } from './account-type/specialist/specialist.compon
 import { AuthGuard } from './auth.guard';
 import { CalendarComponent } from './calendar-c/calendar/calendar.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { AccountLayoutComponent } from './layout/account-layout/account-layout.component';
 import { CalendarLayoutComponent } from './layout/calendar-layout/calendar-layout.component';
 import { SigninLayoutComponent } from './layout/signin-layout/signin-layout.component';
 import { SignupLayoutComponent } from './layout/signup-layout/signup-layout.component';
@@ -31,7 +32,7 @@ const routes: Routes = [
   },
   {
     path: 'signup/accountType',
-    component: AccountTypeComponent,
+    component: AccountLayoutComponent,
     children:[
       {path: 'specialist', component: SpecialistComponent},
       {path: 'client' , component: ClientComponent }
@@ -39,21 +40,19 @@ const routes: Routes = [
     // canActivate: [AuthGuard]
 
   },
-  {
-    path: 'signup/accountType/schedule',
-    component: ScheduleComponent,
-    children:[
-      { path: 'randomly' , component: RandomlyScheduleComponent },
-      { path : 'weekly' , component : WeeklyScheduleComponent },
-      { path: 'daily' , component : DailyScheduleComponent }
-    ],
-    // canActivate: [AuthGuard]
 
-  },
-  {
-    path: 'about',
-    component: AboutUsComponent
-  },
+  // {
+  //   path: 'signup/accountType/schedule',
+  //   component: ScheduleComponent,
+  //   children:[
+  //     { path: 'randomly' , component: RandomlyScheduleComponent },
+  //     { path : 'weekly' , component : WeeklyScheduleComponent },
+  //     { path: 'daily' , component : DailyScheduleComponent }
+  //   ],
+  //   canActivate: [AuthGuard]
+
+  // },
+ 
 
   {
     path: 'contactus',

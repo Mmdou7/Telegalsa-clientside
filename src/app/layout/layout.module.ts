@@ -7,6 +7,8 @@ import { LoginpageModule } from './../loginpage/loginpage.module';
 import { SignUpModule } from './../sign-up/sign-up.module';
 import { CalendarLayoutComponent } from './calendar-layout/calendar-layout.component';
 import { CalendarCModule } from '../calendar-c/calendar-c.module';
+import { AccountTypeModule } from '../account-type/account-type.module';
+import { AccountLayoutComponent } from './account-layout/account-layout.component';
 
 
 
@@ -17,6 +19,7 @@ import { CalendarCModule } from '../calendar-c/calendar-c.module';
     SignupLayoutComponent,
     SigninLayoutComponent,
     CalendarLayoutComponent,
+    AccountLayoutComponent
 
   ],
   imports: [
@@ -24,9 +27,10 @@ CommonModule,
   CoreModule,
   LoginpageModule,
   SignUpModule,
-  CalendarCModule
+  CalendarCModule, 
+  AccountTypeModule
 
   ],
-  exports: [SigninLayoutComponent,SignupLayoutComponent]
+  exports: [SigninLayoutComponent,SignupLayoutComponent,AccountLayoutComponent]
 })
 export class LayoutModule { }
