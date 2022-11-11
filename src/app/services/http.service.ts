@@ -62,7 +62,7 @@ export class HttpService {
   }
 
   getScheduleById(id:string|null){
-    return this.httpClient.get(this.uri+"/api/User/UserSchedules2?id="+id, this.httpOption)
+    return this.httpClient.get(this.uri+"api/User/UserSchedules2?id="+id, this.httpOption)
   }
 
 }
