@@ -11,6 +11,8 @@ export class CalendarLayoutComponent implements OnInit {
   logo  = "../assets/imgs/Asset 1 1.png "
   myDate = new Date();
 
+  date = this.myDate.toLocaleString('en-US', { hour: 'numeric', hour12: true , minute: "2-digit"})
+
   ngOnInit(): void {
   }
 
