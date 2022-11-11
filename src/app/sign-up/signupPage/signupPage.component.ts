@@ -80,15 +80,5 @@ export class SignupPageComponent implements OnInit {
     this.user.setCPassword(this.SignUpForm.controls['confirmPassword'].value);
     this.userService.setUser(this.user);
     this.router.navigateByUrl('/signup/accountType');
-
-
-    // console.log(this.user);
-
   }
-
-
-
-
-
-
 }

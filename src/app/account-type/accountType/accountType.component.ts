@@ -20,8 +20,6 @@ export class AccountTypeComponent implements OnInit {
     user.setSpecialist(this.is_Specialist);
     this.userServices.setUser(user);
     this.router.navigateByUrl('/signup/accountType/specialist');
-
-
   }
 
     isClient(){
@@ -31,8 +29,7 @@ export class AccountTypeComponent implements OnInit {
     this.userServices.setUser(user);
     this.router.navigateByUrl('/signup/accountType/client');
   }
-
-
+  
   ngOnInit() {
   }
 }
