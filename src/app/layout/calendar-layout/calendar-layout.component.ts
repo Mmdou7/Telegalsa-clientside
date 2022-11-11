@@ -1,3 +1,4 @@
+import { Time } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -12,7 +13,10 @@ export class CalendarLayoutComponent implements OnInit {
   myDate = new Date();
 
   date = this.myDate.toLocaleString('en-US', { hour: 'numeric', hour12: true , minute: "2-digit"})
-
+  
+  sessionTitle:string="hamo"
+  sessionTitle2:string = "omaya"
+ 
   ngOnInit(): void {
   }
 
