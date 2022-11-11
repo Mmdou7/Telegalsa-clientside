@@ -17,6 +17,4 @@ export class UserService {
   setUser(user:User){
     this.user=user;
   }
-
-
 }
