@@ -43,4 +43,17 @@ export class HttpService {
     return this.httpClient.delete(this.uri+"api/Schedule/"+id);
   }
 
+  addScheduleByEmail(email:string|null, body:string){
+    return this.httpClient.post(this.uri+"api/Schedule/AddScheduleByEmail?Email="+email,body, this.httpOptions)
+  }
+
+  getScheduleByUserId(id:string|null){
+    return this.httpClient.get(this.uri+"api/User/UserSchedules?id="+id)
+
+  }
+
+  addScheduleByClassCode(classCode:string|undefined , userId:string|null){
+    return this.httpClient.post(this.uri+"api/User/AddByClassCode?userId="+userId+"&schId="+classCode,"");
+  }
+
 }

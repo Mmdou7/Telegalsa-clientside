@@ -1,15 +1,81 @@
 <div class="container">
-  <div class="col-md-4">
-    <h3>{{ viewDate | date : 'MMMM'}}</h3>
+  <div class="row">
+    <div class="d-flex justify-content-between">
+      <h3>{{ viewDate | date : 'MMMM'}}</h3>
+      <button *ngIf="checkingUser" type="button" class="btn btn-success" (click)="showDialog()" icon="pi pi-info-circle"
+        label="Show">+</button>
+      <button *ngIf="checkingUser==false" type="button" class="btn btn-success" (click)="showClient()"
+        icon="pi pi-info-circle" label="Show">+</button>
+      <!-- <div class="col-md-4">
+      </div>
+      <div class="col">
+
+      </div> -->
+    </div>
+
+
   </div>
+  <p-dialog (modal)="false" [style]="{width: '30vw' , height:'15vw'}" header="Add Class" [(visible)]="displayClient">
+    <div class="container">
+      <div class="row">
+        <div class="mb-5 col-5">
+
+          <label for="ClassCode" class="form-label">Class Code:</label>
+          <input type="text" (keyup)="change($event)" class="form-control" id="ClassCode" placeholder="enter ClassCode">
+        </div>
+      </div>
+      <div>
+        <button class="btn btn-primary" (click)="addByClassCode()"> Add</button>
+      </div>
+
+    </div>
+
+  </p-dialog>
+  <p-dialog (modal)="false" [style]="{width: '50vw' , height:'50vw'}" header="Add class" [(visible)]="display">
+    <button class="btn btn-primary" (click)="addEvent()">add new Event</button>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">class code </th>
+          <th scope="col">Appointment title </th>
+          <th scope="col">Start Date</th>
+          <th scope="col">Operation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let event of events">
+          <th>
+            <input type="text" (keyup)="schedule.setId(event.title)" class="form-control" [(ngModel)]="event.id"
+              (keyup)="refresh.next()">
+          </th>
+
+          <th>
+            <input type="text" (keyup)="schedule.setSessionTitle(event.title)" class="form-control"
+              [(ngModel)]="event.title" (keyup)="refresh.next()">
+          </th>
+          <td>
+            <p-calendar #myCalendar (mwlClick)="schedule.setStartDate(event.start.toString())" [(ngModel)]="event.start"
+              (ngModelChange)="refresh.next()"></p-calendar>
+          </td>
+          <!-- <td>
+            <p-calendar [(ngModel)]="event.end" (ngModelChange)="refresh.next()"></p-calendar>
+          </td> -->
+          <td><button class="btn btn-danger" (click)="deleteEvent(event)">Delete</button></td>
+          <td><button class="btn btn-primary" (click)=" EditEvent(event)">Edit</button></td>
+        </tr>
+
+      </tbody>
+    </table>
+  </p-dialog>
+
   <mwl-calendar-month-view-header [days]=[days]></mwl-calendar-month-view-header>
   <mwl-calendar-month-view [refresh]="refresh" [viewDate]="viewDate" [events]="events" (eventClicked)="print($event)">
   </mwl-calendar-month-view>
   <!-- <mwl-calendar-week-view [viewDate]="viewDate"></mwl-calendar-week-view> -->
 
-  <button class="btn btn-warning" (click)="addEvent()">add new Event</button>
 
-  <table class="table">
+  <!-- <table class="table">
     <thead>
       <tr>
         <th scope="col">Appointment title </th>
@@ -26,14 +92,14 @@
             (ngModelChange)="refresh.next()"></p-calendar>
         </td>
         <td>
-          <!-- <p-calendar [(ngModel)]="event.end" (ngModelChange)="refresh.next()"></p-calendar> -->
+          <p-calendar [(ngModel)]="event.end" (ngModelChange)="refresh.next()"></p-calendar>
         </td>
         <td><button class="btn btn-danger" (click)="deleteEvent(event)">Delete</button></td>
         <td><button class="btn btn-warning" (click)=" EditEvent(event)">Edit</button></td>
       </tr>
 
     </tbody>
-  </table>
+  </table> -->
 
 
 

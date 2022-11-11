@@ -7,6 +7,8 @@ import {CalendarModule as CalenderNg} from 'primeng/calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {DialogModule} from 'primeng/dialog';
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     CalendarModule,
     CalenderNg,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DialogModule,
+    ProgressSpinnerModule
 
 
   ],

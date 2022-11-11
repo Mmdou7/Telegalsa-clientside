@@ -52,7 +52,7 @@ const routes: Routes = [
   //   canActivate: [AuthGuard]
 
   // },
- 
+
 
   {
     path: 'contactus',
@@ -61,7 +61,7 @@ const routes: Routes = [
   {
     path: 'calendar',
     component: CalendarLayoutComponent,
-    //canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
 
   },
 

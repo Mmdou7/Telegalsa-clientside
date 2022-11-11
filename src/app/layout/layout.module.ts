@@ -9,6 +9,7 @@ import { CalendarLayoutComponent } from './calendar-layout/calendar-layout.compo
 import { CalendarCModule } from '../calendar-c/calendar-c.module';
 import { AccountTypeModule } from '../account-type/account-type.module';
 import { AccountLayoutComponent } from './account-layout/account-layout.component';
+import {CalendarModule} from 'primeng/calendar';
 
 
 
@@ -27,8 +28,9 @@ CommonModule,
   CoreModule,
   LoginpageModule,
   SignUpModule,
-  CalendarCModule, 
-  AccountTypeModule
+  CalendarCModule,
+  AccountTypeModule,
+  CalendarModule
 
   ],
   exports: [SigninLayoutComponent,SignupLayoutComponent,AccountLayoutComponent]

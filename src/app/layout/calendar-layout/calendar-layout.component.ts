@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class CalendarLayoutComponent implements OnInit {
 
   constructor() { }
+  logo  = "../assets/imgs/Asset 1 1.png "
+  myDate = new Date();
 
   ngOnInit(): void {
   }
