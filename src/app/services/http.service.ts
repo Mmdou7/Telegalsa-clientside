@@ -61,8 +61,8 @@ export class HttpService {
     return this.httpClient.post(this.uri+"api/User/AddByClassCode?userId="+userId+"&schId="+classCode,"",this.httpOption);
   }
 
-  getScheduleById(id:string){
-    return this.httpClient.get(this.uri+"/api/User/UserSchedules2?id="+id, this.httpOption);
+  getScheduleById(id:string|null){
+    return this.httpClient.get(this.uri+"/api/User/UserSchedules2?id="+id, this.httpOption)
   }
 
 }
