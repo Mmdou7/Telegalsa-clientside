@@ -18,18 +18,14 @@
             <p class="me-4"><b>{{date}}</b></p>
           </div>
           <!-- <p-calendar [styleClass]="'calendar-width'" [inline]="true" [style]=""></p-calendar> -->
-          <div>
+          <div class="mb-5 mt-5">
             <h3><b>Upcoming classes</b></h3>
           </div>
-
-          <div class="card mt-5" style="width: 19rem; height: 9rem;">
-            <div class="card-body alert alert-warning">
-              <p class="card-title">Card title</p>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.
-              </p>
-
-            </div>
+          <div class="alert alert-info me-4" style="border-radius:15px; height:50px;" role="alert">
+            {{sessionTitle}}
+          </div>
+          <div class="alert alert-danger me-4" style="border-radius:15px; height:50px;" role="alert">
+            {{sessionTitle2}}
           </div>
 
         </div>
