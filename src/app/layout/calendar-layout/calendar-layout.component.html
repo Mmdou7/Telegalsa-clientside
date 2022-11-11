@@ -6,13 +6,36 @@
       <div class="sidebar">
         <img [src]="logo" alt="" class="p-3">
         <!-- <div style="overflow:hidden ;">
-          <p-calendar [styleClass]="'calendar-width'" [inline]="true" [style]=""></p-calendar>
+
         </div> -->
 
         <!-- <p>{{myDate | date : 'yyyy-MM-dd' }}</p> -->
-        <div class="d-flex"></div>
-        <p class="ms-4"><b>Today</b></p>
-       
+        <div class="ms-4">
+
+
+          <div class="d-flex justify-content-between">
+            <p class=""><b>Today</b></p>
+            <p class="me-4"><b>{{date}}</b></p>
+          </div>
+          <!-- <p-calendar [styleClass]="'calendar-width'" [inline]="true" [style]=""></p-calendar> -->
+          <div>
+            <h3><b>Upcoming classes</b></h3>
+          </div>
+
+          <div class="card mt-5" style="width: 19rem; height: 9rem;">
+            <div class="card-body alert alert-warning">
+              <p class="card-title">Card title</p>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+
+
+
 
         <!-- <div class="card ms-4" style="width: 18rem;">
           <div class="card-body">
