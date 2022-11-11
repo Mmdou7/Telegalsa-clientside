@@ -38,7 +38,7 @@ export class CalendarComponent implements OnInit {
     this.httpServices.addScheduleByClassCode(this.classCode, userId).subscribe(data =>{
       alert("Successfuly added to the calendar");
       console.log(data);
-      this.refresh.next();
+      this.getEvents();
 
     },
     err =>{
@@ -185,7 +185,7 @@ export class CalendarComponent implements OnInit {
         this.events = [
       ...this.events,
       {
-        id : this.schedule.getId(),
+        id : eventToEdit.id,
         title: this.schedule.getSessionTitle(),
         start: this.schedule.getStartDate(),
         // end: eventToEdit.end,

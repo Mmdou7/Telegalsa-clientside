@@ -14,14 +14,21 @@ export class CalendarLayoutComponent implements OnInit {
   myDate = new Date();
 
   date = this.myDate.toLocaleString('en-US', { hour: 'numeric', hour12: true , minute: "2-digit"})
-  
-  sessionTitle:string="hamo"
-  sessionTitle2:string = "omaya"
+
+  sessionTitle:string|undefined=undefined
+  sessionTitle2:string|undefined = undefined
+
+  session:any;
 
    getIncomingSchedule(){
-    this.httpser.getScheduleById(localStorage.getItem('id')).subscribe(data=>{
-        console.log(data)
-    })
+   this.session = this.httpser.getScheduleById(localStorage.getItem('id')).subscribe(data=>{
+      // let templeteOne:string = Object.values(data)[0].sessionTitle;
+      // let templeteTwo:string = Object.values(data)[1].sessionTitle;
+      // this.sessionTitle=templeteOne;
+      // this.sessionTitle2=templeteTwo;
+        // console.log(data)
+        this.session= data;
+      })
    }
   ngOnInit(): void {
     this.getIncomingSchedule()
